@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.Random;
+
 // Definición de la clase BasePage
 public class BasePage {
     // Definición de variables protegidas para WebDriver, WebDriverWait y Actions
@@ -50,7 +52,12 @@ public class BasePage {
     public void closeBrowser() {
         driver.quit();
     }
-
+    public String numeroAleatorio() {
+        // Generar número aleatorio de 7 dígitos
+        Random random = new Random();
+        int numeroAleatorio = 1000000 + random.nextInt(9000000); // Rango de 7 dígitos: 1000000 a 9999999
+        return String.valueOf(numeroAleatorio); // Retorna el número como String
+    }
     private WebElement find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
