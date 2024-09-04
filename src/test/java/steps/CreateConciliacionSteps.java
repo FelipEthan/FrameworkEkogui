@@ -41,7 +41,7 @@ public class CreateConciliacionSteps {
     @And("^Ingresa año y consecutivo y hace clic en consultar$")
     public void enterPGN() {
         this.createConciliacion.sendYear("2020");
-        this.createConciliacion.sendConsecutive("1212388");
+        this.createConciliacion.sendConsecutive("7519388");
         this.createConciliacion.clickConsult();
     }
     @Then("^El sistema muestra la pestaña Información Básica$")
@@ -65,10 +65,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendRadicate();
         this.createConciliacion.clicSearch();
         this.createConciliacion.clicClose();
-        this.createConciliacion.clicDocSopor();
-        this.createConciliacion.clicClose();
         this.createConciliacion.clicParts();
         this.createConciliacion.clicParte();
+        this.createConciliacion.clicDocSopor();
+        this.createConciliacion.clicClose();
         this.createConciliacion.clicTipCalidad();
         this.createConciliacion.clicCalidad();
         this.createConciliacion.clicEntidades();
