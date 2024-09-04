@@ -41,7 +41,7 @@ public class CreateConciliacionSteps {
     @And("^Ingresa año y consecutivo y hace clic en consultar$")
     public void enterPGN() {
         this.createConciliacion.sendYear("2020");
-        this.createConciliacion.sendConsecutive("1211348");
+        this.createConciliacion.sendConsecutive("1212388");
         this.createConciliacion.clickConsult();
     }
     @Then("^El sistema muestra la pestaña Información Básica$")
@@ -65,6 +65,8 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendRadicate();
         this.createConciliacion.clicSearch();
         this.createConciliacion.clicClose();
+        this.createConciliacion.clicDocSopor();
+        this.createConciliacion.clicClose();
         this.createConciliacion.clicParts();
         this.createConciliacion.clicParte();
         this.createConciliacion.clicTipCalidad();
@@ -85,6 +87,16 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendIdentificacion("93202179");
         this.createConciliacion.clicText();
         this.createConciliacion.clicAñadirVictimas();
-
+        this.createConciliacion.clicActosAdmin();
+        this.createConciliacion.clicObservaciones();
+        this.createConciliacion.clicListActos();
+        this.createConciliacion.clicActo();
+        this.createConciliacion.clicNumActo();
+        this.createConciliacion.sendNumActo("21302124");
+        this.createConciliacion.sendObservaciones("PRUEBAS");
+        this.createConciliacion.clicFechPresentActo();
+        this.createConciliacion.selectFechPresenActo();
+        this.createConciliacion.saveActo();
+        this.createConciliacion.nextPestaña();
     }
 }

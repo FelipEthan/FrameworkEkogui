@@ -42,6 +42,16 @@ public class CreateConciliacionPage extends BasePage {
     String sendIdentificacion = "//*[@id='victima_identificacion']";
     String clicAñadirVictima = "//*[@id=\"warningMessageOppositeParts\"]/button";
     String usuario = "li[display='dynamic']";
+    String actosAdmin = "//*[@id=\"formulario-registro-informacion-basica\"]/article[6]/div[2]/button";
+    String listActos = "//select[@formcontrolname='idTpActo']\n";
+    String optionActo = "//option[@value='12']\n";
+    String observaciones = "//*[@id=\"observacion\"]";
+    String numActo = "//*[@id='numero_de_acto']";
+    String fechPresentActo = "//div[@class='input-group'][.//*[@id='pracFechaExpedicion']]";
+    String selecFechPresenActo = "div[aria-label='3-9-2024'] div";
+    String saveActos = "//button[@type='submit' and text()='Guardar']\n";
+    String next = "//button[@type='submit' and text()='Continuar']\n";
+
 
     public void navegarEkogui() {
         navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
@@ -196,5 +206,38 @@ public class CreateConciliacionPage extends BasePage {
     public void clicText() {
         this.clickElementCss(usuario);
     }
+    public void clicActosAdmin() {
+        this.clickElement(actosAdmin);
+    }
 
+    public void clicListActos() {
+        this.clickElement(listActos);
+    }
+    public void clicActo() {
+        this.clickElement(optionActo);
+    }
+    public void clicNumActo() {
+        this.clickElement(numActo);
+    }
+    public void sendNumActo(String value) {
+        this.write(numActo, value);
+    }
+    public void clicObservaciones() {
+        this.clickElement(observaciones);
+    }
+    public void sendObservaciones(String value) {
+        this.write(observaciones, value);
+    }
+    public void clicFechPresentActo() {
+        this.clickElement(fechPresentActo);
+    }
+    public void selectFechPresenActo() {
+        this.clickElementCss(selecFechPresenActo);
+    }
+    public void saveActo() {
+        this.clickElement(saveActos);
+    }
+    public void nextPestaña() {
+        this.clickElement(next);
+    }
 }
