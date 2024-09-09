@@ -47,10 +47,17 @@ public class CreateConciliacionPage extends BasePage {
     String optionActo = "//option[@value='12']\n";
     String observaciones = "//*[@id=\"observacion\"]";
     String numActo = "//*[@id='numero_de_acto']";
-    String fechPresentActo = "//div[@class='input-group'][.//*[@id='pracFechaExpedicion']]";
-    String selecFechPresenActo = "div[aria-label='3-9-2024'] div";
+    String fechPresentActo = "//*[@id=\"calendar\"]";
+    String selecFechPresenActo = "//div[contains(@class, 'today')]";
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
+    String fechaHechos = "//button[@class='btn bg-btn border']";
+    String selecFechaHechos = "//div[@ngbdatepickerdayview and contains(@class, 'btn-light') and text()='9']\n";
+    String departamento = "#departamento div[class='ng-select-container']";
+    String selectDepartamento = "//span[text()='BOGOTA']";
+    String municipio = "#municipio";
+    String selectMunicipio = "//span[text()='BOGOTA, D.C.']";
+    String añadirCiudad = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-hechos-y-causas/section/form/article[1]/div[1]/button";
 
 
     public void navegarEkogui() {
@@ -137,6 +144,7 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElementCss(accionControl);
     }
 
+
     public void clicOptionAccionControl() {
         this.clickElement(optionAccionControl);
     }
@@ -150,7 +158,7 @@ public class CreateConciliacionPage extends BasePage {
     }
 
     public void sendRadicate() {
-        this.writeAndSubmit(clicRadicate, "20198002189312");
+            this.writeAndSubmit(clicRadicate, "20198002189312");
     }
 
     public void clicSearch() {
@@ -232,12 +240,35 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElement(fechPresentActo);
     }
     public void selectFechPresenActo() {
-        this.clickElementCss(selecFechPresenActo);
+        this.clickElement(selecFechPresenActo);
     }
     public void saveActo() {
         this.clickElement(saveActos);
     }
-    public void nextPestaña() {
+    public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
+        Thread.sleep(6000);
     }
+    public void clicFechaHechos() {
+        this.clickElement(fechaHechos);
+    }
+    public void clicSelectFechaHechos() {
+        this.clickElement(selecFechaHechos);
+    }
+    public void clicDepartamentos() {
+        this.clickElementCss(departamento);
+    }
+    public void selecDepartamento() {
+        this.clickElement(selectDepartamento);
+    }
+    public void clicMunicipio() {
+        this.clickElementCss(municipio);
+    }
+    public void clicAñadirMunicipio() {
+        this.clickElement(añadirCiudad);
+    }
+    public void selecMunicipio() {
+        this.clickElement(selectMunicipio);
+    }
+
 }

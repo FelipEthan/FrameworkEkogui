@@ -40,23 +40,24 @@ public class CreateConciliacionSteps {
 
     @And("^Ingresa año y consecutivo y hace clic en consultar$")
     public void enterPGN() {
-        this.createConciliacion.sendYear("2020");
+        this.createConciliacion.sendYear("2000");
         String numeroAleatorio = createConciliacion.numeroAleatorio();
         this.createConciliacion.sendConsecutive(numeroAleatorio);
         this.createConciliacion.clickConsult();
+
     }
     @Then("^El sistema muestra la pestaña Información Básica$")
     public void screenPesta1() {
         this.createConciliacion.textValidatePesta1();
     }
     @When("^Se diligencia la información y hace clic en Continuar$")
-    public void enterDataPesta1() {
+    public void enterDataPesta1() throws InterruptedException {
         this.createConciliacion.datePresent();
         this.createConciliacion.sendDate();
-        this.createConciliacion.clicAutoridad();
-        this.createConciliacion.sendAutoridad();
         this.createConciliacion.clicJurisdiccion();
         this.createConciliacion.sendJurisdiccion();
+        this.createConciliacion.clicAutoridad();
+        this.createConciliacion.sendAutoridad();
         this.createConciliacion.clicFormPresent();
         this.createConciliacion.clicOptionFormPresent();
         this.createConciliacion.clicAccionControl();
@@ -70,8 +71,6 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicParte();
         this.createConciliacion.clicTipCalidad();
         this.createConciliacion.clicCalidad();
-        this.createConciliacion.clicDocSopor();
-        this.createConciliacion.clicClose();
         this.createConciliacion.clicEntidades();
         this.createConciliacion.clicEntidad();
         this.createConciliacion.clicDocSopor();
@@ -79,6 +78,8 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicAdicionarParte();
         this.createConciliacion.clicParts();
         this.createConciliacion.clicParte();
+        this.createConciliacion.clicDocSopor();
+        this.createConciliacion.clicClose();
         this.createConciliacion.clicTipCalidad();
         this.createConciliacion.clicCalidad2();
         this.createConciliacion.clicEntidades();
@@ -101,5 +102,12 @@ public class CreateConciliacionSteps {
         this.createConciliacion.selectFechPresenActo();
         this.createConciliacion.saveActo();
         this.createConciliacion.nextPestaña();
+        this.createConciliacion.clicFechaHechos();
+        this.createConciliacion.clicSelectFechaHechos();
+        this.createConciliacion.clicDepartamentos();
+        this.createConciliacion.selecDepartamento();
+        this.createConciliacion.clicMunicipio();
+        this.createConciliacion.selecMunicipio();
+        this.createConciliacion.clicAñadirMunicipio();
     }
 }

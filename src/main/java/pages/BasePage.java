@@ -27,7 +27,7 @@ public class BasePage {
         // Asigna el WebDriver recibido al campo 'driver' de la clase
         this.driver = driver;
         // Inicializa WebDriverWait con un tiempo de espera de 30 segundos
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         // Inicializa Actions para realizar acciones avanzadas del usuario
         this.actions = new Actions(driver);
         // Inicializa los elementos de la página usando PageFactory
@@ -89,6 +89,5 @@ public class BasePage {
         element.sendKeys(texto);
         element.sendKeys(Keys.ENTER);
     }
-
 }
 
