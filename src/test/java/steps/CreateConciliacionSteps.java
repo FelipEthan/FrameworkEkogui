@@ -109,5 +109,9 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicMunicipio();
         this.createConciliacion.selecMunicipio();
         this.createConciliacion.clicAñadirMunicipio();
+        this.createConciliacion.clicDescripHechos();
+        this.createConciliacion.sendDescripHechos();
+        this.createConciliacion.clicPretenDecla();
+        this.createConciliacion.sendPretenDecla();
     }
 }

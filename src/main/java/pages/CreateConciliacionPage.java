@@ -58,7 +58,10 @@ public class CreateConciliacionPage extends BasePage {
     String municipio = "#municipio";
     String selectMunicipio = "//span[text()='BOGOTA, D.C.']";
     String añadirCiudad = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-hechos-y-causas/section/form/article[1]/div[1]/button";
-
+    String descripHechos = "//*[@id=\"descripcion_de_los_echos\"]";
+    String pretensionDeclara = "//*[@id='presentasiones_declarativas']";
+    String causa = "div[class$='ng-appearance-outline']";
+    String selectCausa = "//span[text()='ACOSO SEXUAL']";
 
     public void navegarEkogui() {
         navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
@@ -247,7 +250,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(6000);
+        Thread.sleep(30000);
     }
     public void clicFechaHechos() {
         this.clickElement(fechaHechos);
@@ -269,6 +272,18 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void selecMunicipio() {
         this.clickElement(selectMunicipio);
+    }
+    public void clicDescripHechos() {
+        this.clickElement(descripHechos);
+    }
+    public void sendDescripHechos() {
+        this.writeAndSubmit(descripHechos, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO");
+    }
+    public void clicPretenDecla() {
+        this.clickElement(pretensionDeclara);
+    }
+    public void sendPretenDecla() {
+        this.writeAndSubmit(pretensionDeclara, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO");
     }
 
 }
