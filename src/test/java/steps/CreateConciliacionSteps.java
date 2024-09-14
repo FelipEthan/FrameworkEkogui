@@ -24,7 +24,7 @@ public class CreateConciliacionSteps {
     @When("^Selecciona tipo documento, ingresa cedula y la contraseña$")
     public void enterDataAdmin() {
         this.createConciliacion.selectTipoDocumento("CC");
-        this.createConciliacion.sendUser("17642332");
+        this.createConciliacion.sendUser("19391315");
         this.createConciliacion.sendPass("Agentesoporte_16");
     }
     @And("^Hace clic en el botón de Entrar y hace clic en Crear registro$")
@@ -130,6 +130,22 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendValorPretension("20000000");
         this.createConciliacion.adicionarPretension();
         this.createConciliacion.nextPestaña4();
-
+        this.createConciliacion.docSoportAdmi();
+        this.createConciliacion.clicRadicate();
+        this.createConciliacion.sendRadicate();
+        this.createConciliacion.clicSearch();
+        this.createConciliacion.clicClose();
+        this.createConciliacion.clicDateActuacion();
+        this.createConciliacion.selectDateActuacion();
+        this.createConciliacion.clicDateAudiencia();
+        this.createConciliacion.selectDateAudiencia();
+        this.createConciliacion.docSoportAdmi();
+        this.createConciliacion.clicClose();
+        this.createConciliacion.solicitudConciliacion();
+        this.createConciliacion.selectSolicitudConciliacion();
+        this.createConciliacion.clicObservacioAdmisi();
+        this.createConciliacion.sendObservaciAdmisi();
+        this.createConciliacion.clicFinalizar();
+        this.createConciliacion.clicFinalizarSi();
     }
 }

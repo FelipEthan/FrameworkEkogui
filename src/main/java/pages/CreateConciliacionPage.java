@@ -34,7 +34,7 @@ public class CreateConciliacionPage extends BasePage {
     String calidad2 = "//span[contains(text(),'CONVOCADO')]\n";
     String entidades = "#partes_entidad div[class='ng-select-container']";
     String clicEntidad = "//span[contains(text(),'ADMINISTRADORA DE LOS RECURSOS DEL SISTEMA GENERAL DE SEGURIDAD SOCIAL EN SALUD')]\n";
-    String clicEntidad2 = "//span[contains(text(),'FISCALIA GENERAL DE LA NACION')]\n";
+    String clicEntidad2 = "//span[contains(text(),'FONDO DE PRESTACIONES SOCIALES DEL MAGISTERIO')]\n";
     String adicionarParte = "html > body > ek-main > div:nth-of-type(2) > div > div > ek-perfil-abogada-analista > main > div:nth-of-type(2) > ek-abogada-analista-informacion-basica-del-proceso > section > form > article:nth-of-type(3) > form > div > button";
     String clicVictima = "#victima_tipo_de_documento div[class='ng-select-container']";
     String optionVictima = "//span[text()='CEDULA DE CIUDADANIA']";
@@ -75,6 +75,17 @@ public class CreateConciliacionPage extends BasePage {
     String valorPretension = "//*[@id=\"valor\"]";
     String adicionarPretension = "//*[@id=\"form\"]/article[2]/div[1]/button";
     String next4 = "//*[@id=\"form\"]/div[2]/button[2]";
+    String dateActuacion = "//*[@id=\"performanceDate\"]";
+    String selectDateActuacion = "//div[contains(@class, 'today')]";
+    String dateAudiencia = "//input[@placeholder='AAAA-MM-DD']";
+    String selectDateAudiencia = "div[aria-label='lunes, 30 de septiembre de 2024'] div";
+    String solicitud = "//ng-select[@bindlabel='padoDescripcion']\n";
+    String selectSolicitud = "//span[text()='MINISTERIO PUBLICO']\n";
+    String docSoportAdmision = "//button[@class='documentos-soporte-btn']\n";
+    String clicRadicate2 = "/html/body/ngb-modal-window/div/div/ek-modal-soporte/div/div/div/div[2]/div[2]/input";
+    String observacionesAdmision = "//*[@id=\"story\"]";
+    String finalizar = "//button[@type='submit']\n";
+    String buttonSi = "//button[@class='button-save']";
 
 
     public void navegarEkogui() {
@@ -348,7 +359,50 @@ public class CreateConciliacionPage extends BasePage {
     public void adicionarPretension() {
         this.clickElement(adicionarPretension);
     }
-    public void nextPestaña4() {
+    public void nextPestaña4() throws InterruptedException {
         this.clickElement(next4);
+        Thread.sleep(20000);
+    }
+    public void clicDateActuacion() {
+        this.clickElement(dateActuacion);
+    }
+    public void selectDateActuacion() {
+        this.clickElement(selectDateActuacion);
+    }
+    public void clicDateAudiencia() {
+        this.clickElement(dateAudiencia);
+    }
+    public void selectDateAudiencia() {
+        this.clickElementCss(selectDateAudiencia);
+    }
+    public void solicitudConciliacion() {
+        this.clickElement(solicitud);
+    }
+    public void selectSolicitudConciliacion() {
+        this.clickElement(selectSolicitud);
+    }
+    public void docSoportAdmi() throws InterruptedException {
+        this.clickElement(docSoportAdmision);
+        Thread.sleep(4000);
+    }
+    public void clicObservacioAdmisi() {
+        this.clickElement(observacionesAdmision);
+    }
+    public void sendObservaciAdmisi() {
+        this.writeAndSubmit(observacionesAdmision, "OCURADURIA 1 DELEGADA ANTE EL CONSE");
+    }
+    public void clicRadicate2() {
+        this.clickElement(clicRadicate2);
+    }
+    public void sendRadicate2() {
+        this.writeAndSubmit(clicRadicate2, "20198002189312");
+    }
+
+    public void clicFinalizar() {
+        this.clickElement(finalizar);
+    }
+    public void clicFinalizarSi() {
+        this.clickElement(buttonSi);
     }
 }
+
