@@ -60,8 +60,14 @@ public class CreateConciliacionPage extends BasePage {
     String añadirCiudad = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-hechos-y-causas/section/form/article[1]/div[1]/button";
     String descripHechos = "//*[@id=\"descripcion_de_los_echos\"]";
     String pretensionDeclara = "//*[@id='presentasiones_declarativas']";
-    String causa = "div[class$='ng-appearance-outline']";
-    String selectCausa = "//span[text()='ACOSO SEXUAL']";
+    String causa = "//*[@id=\"causa\"]/div";
+    String selectCausa = "//span[contains(.,'ACCESO CARNAL O ACTO SEXUAL VIOLENTO')]";
+    String subCausa = "//input[@id='subcausa']";
+    String buttonAñadirCausa = "//*[@id=\"form\"]/article[3]/div[1]/button";
+    String valor = "//*[@id=\"valor_economico\"]/div";
+    String selectValor = "//span[contains(.,'Determinado')]";
+    String erogacion = "//*[@id=\"genera_erogacion_economica\"]/div";
+    String selectErogacion = "//span[contains('NACIONAL')]";
 
     public void navegarEkogui() {
         navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
@@ -250,7 +256,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(30000);
+        Thread.sleep(9000);
     }
     public void clicFechaHechos() {
         this.clickElement(fechaHechos);
@@ -277,13 +283,40 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElement(descripHechos);
     }
     public void sendDescripHechos() {
-        this.writeAndSubmit(descripHechos, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO");
+        this.writeAndSubmit(descripHechos, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA A 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ES");
     }
     public void clicPretenDecla() {
         this.clickElement(pretensionDeclara);
     }
     public void sendPretenDecla() {
-        this.writeAndSubmit(pretensionDeclara, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO");
+        this.writeAndSubmit(pretensionDeclara, "PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO DE ESTADO PROCURADURIA 1 DELEGADA ANTE EL CONSEJO");
     }
-
+    public void clicCausa() {
+        this.clickElement(causa);
+    }
+    public void selectCausa() {
+        this.clickElement(selectCausa);
+    }
+    public void sendSubCausa() {
+        this.writeAndSubmit(subCausa, "OCURADURIA 1 DELEGADA ANTE EL CONSE");
+    }
+    public void añadirCausa() {
+        this.clickElement(buttonAñadirCausa);
+    }
+    public void nextValorEconomico() {
+        this.clickElement(next);
+    }
+    public void valorEconomico() {
+        this.clickElement(valor);
+    }
+    public void selectValorEconomico() throws InterruptedException {
+        Thread.sleep(1000);
+        this.clickElement(selectValor);
+    }
+    public void erogacion() {
+        this.clickElement(valor);
+    }
+    public void selecErogacion() {
+        this.clickElement(valor);
+    }
 }

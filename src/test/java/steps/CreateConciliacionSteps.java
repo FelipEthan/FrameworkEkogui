@@ -113,5 +113,14 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendDescripHechos();
         this.createConciliacion.clicPretenDecla();
         this.createConciliacion.sendPretenDecla();
+        this.createConciliacion.clicCausa();
+        this.createConciliacion.selectCausa();
+        this.createConciliacion.sendSubCausa();
+        this.createConciliacion.añadirCausa();
+        this.createConciliacion.nextValorEconomico();
+        this.createConciliacion.valorEconomico();
+        this.createConciliacion.selectValorEconomico();
+        this.createConciliacion.erogacion();
+        this.createConciliacion.selecErogacion();
     }
 }
