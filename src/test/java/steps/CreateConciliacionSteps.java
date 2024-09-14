@@ -122,5 +122,14 @@ public class CreateConciliacionSteps {
         this.createConciliacion.selectValorEconomico();
         this.createConciliacion.erogacion();
         this.createConciliacion.selecErogacion();
+        this.createConciliacion.pretension();
+        this.createConciliacion.selecPretension();
+        this.createConciliacion.unidad();
+        this.createConciliacion.selectUnidad();
+        this.createConciliacion.selectValorPretension();
+        this.createConciliacion.sendValorPretension("20000000");
+        this.createConciliacion.adicionarPretension();
+        this.createConciliacion.nextPestaña4();
+
     }
 }

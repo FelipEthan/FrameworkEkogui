@@ -47,7 +47,7 @@ public class CreateConciliacionPage extends BasePage {
     String optionActo = "//option[@value='12']\n";
     String observaciones = "//*[@id=\"observacion\"]";
     String numActo = "//*[@id='numero_de_acto']";
-    String fechPresentActo = "//*[@id=\"calendar\"]";
+    String fechPresentActo = "//*[@id=\"calendar-actos-administrativos\"]";
     String selecFechPresenActo = "//div[contains(@class, 'today')]";
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
@@ -67,7 +67,15 @@ public class CreateConciliacionPage extends BasePage {
     String valor = "//*[@id=\"valor_economico\"]/div";
     String selectValor = "//span[contains(.,'Determinado')]";
     String erogacion = "//*[@id=\"genera_erogacion_economica\"]/div";
-    String selectErogacion = "//span[contains('NACIONAL')]";
+    String selectErogacion = "//span[text()='NACIONAL']\n";
+    String presentiones = "//*[@id=\"tipo_pretension\"]/div";
+    String selectPresention = "//span[text()='DAÑO INMATERIAL - DAÑO MORAL']\n";
+    String unidades = "//*[@id=\"unidad_monetaria\"]/div";
+    String selectUnidades = "//span[text()='PESOS']\n";
+    String valorPretension = "//*[@id=\"valor\"]";
+    String adicionarPretension = "//*[@id=\"form\"]/article[2]/div[1]/button";
+    String next4 = "//*[@id=\"form\"]/div[2]/button[2]";
+
 
     public void navegarEkogui() {
         navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
@@ -256,7 +264,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(9000);
+        Thread.sleep(6000);
     }
     public void clicFechaHechos() {
         this.clickElement(fechaHechos);
@@ -310,13 +318,37 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElement(valor);
     }
     public void selectValorEconomico() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         this.clickElement(selectValor);
     }
     public void erogacion() {
-        this.clickElement(valor);
+        this.clickElement(erogacion);
     }
     public void selecErogacion() {
-        this.clickElement(valor);
+        this.clickElement(selectErogacion);
+    }
+    public void pretension() {
+        this.clickElement(presentiones);
+    }
+    public void selecPretension() {
+        this.clickElement(selectPresention);
+    }
+    public void unidad() {
+        this.clickElement(unidades);
+    }
+    public void selectUnidad() {
+        this.clickElement(selectUnidades);
+    }
+    public void selectValorPretension() {
+        this.clickElement(valorPretension);
+    }
+    public void sendValorPretension(String value) {
+        this.write(valorPretension, value);
+    }
+    public void adicionarPretension() {
+        this.clickElement(adicionarPretension);
+    }
+    public void nextPestaña4() {
+        this.clickElement(next4);
     }
 }
