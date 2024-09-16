@@ -24,7 +24,7 @@ public class CreateConciliacionSteps {
     @When("^Selecciona tipo documento, ingresa cedula y la contraseña$")
     public void enterDataAdmin() {
         this.createConciliacion.selectTipoDocumento("CC");
-        this.createConciliacion.sendUser("19391315");
+        this.createConciliacion.sendUser("79150488");
         this.createConciliacion.sendPass("Agentesoporte_16");
     }
     @And("^Hace clic en el botón de Entrar y hace clic en Crear registro$")
@@ -92,9 +92,9 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicText();
         this.createConciliacion.clicAñadirVictimas();
         this.createConciliacion.clicActosAdmin();
-        this.createConciliacion.clicObservaciones();
         this.createConciliacion.clicListActos();
         this.createConciliacion.clicActo();
+        this.createConciliacion.clicObservaciones();
         this.createConciliacion.clicNumActo();
         this.createConciliacion.sendNumActo("21302124");
         this.createConciliacion.sendObservaciones("PRUEBAS");
@@ -130,13 +130,13 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendValorPretension("20000000");
         this.createConciliacion.adicionarPretension();
         this.createConciliacion.nextPestaña4();
+        this.createConciliacion.clicDateActuacion();
+        this.createConciliacion.selectDateActuacion();
         this.createConciliacion.docSoportAdmi();
         this.createConciliacion.clicRadicate();
         this.createConciliacion.sendRadicate();
         this.createConciliacion.clicSearch();
         this.createConciliacion.clicClose();
-        this.createConciliacion.clicDateActuacion();
-        this.createConciliacion.selectDateActuacion();
         this.createConciliacion.clicDateAudiencia();
         this.createConciliacion.selectDateAudiencia();
         this.createConciliacion.docSoportAdmi();

@@ -34,13 +34,13 @@ public class CreateConciliacionPage extends BasePage {
     String calidad2 = "//span[contains(text(),'CONVOCADO')]\n";
     String entidades = "#partes_entidad div[class='ng-select-container']";
     String clicEntidad = "//span[contains(text(),'ADMINISTRADORA DE LOS RECURSOS DEL SISTEMA GENERAL DE SEGURIDAD SOCIAL EN SALUD')]\n";
-    String clicEntidad2 = "//span[contains(text(),'FONDO DE PRESTACIONES SOCIALES DEL MAGISTERIO')]\n";
-    String adicionarParte = "html > body > ek-main > div:nth-of-type(2) > div > div > ek-perfil-abogada-analista > main > div:nth-of-type(2) > ek-abogada-analista-informacion-basica-del-proceso > section > form > article:nth-of-type(3) > form > div > button";
+    String clicEntidad2 = "//span[contains(text(),'PAR BANCO DEL ESTADO EN LIQUIDACION')]\n";
+    String adicionarParte = "//body/ek-main[1]/div[2]/div[1]/div[1]/ek-perfil-abogada-analista[1]/main[1]/div[2]/ek-abogada-analista-informacion-basica-del-proceso[1]/section[1]/form[1]/article[3]/form[1]/div[1]/button[1]";
     String clicVictima = "#victima_tipo_de_documento div[class='ng-select-container']";
     String optionVictima = "//span[text()='CEDULA DE CIUDADANIA']";
     String clicIdentificacion = "#victima_identificacion";
     String sendIdentificacion = "//*[@id='victima_identificacion']";
-    String clicAñadirVictima = "//*[@id=\"warningMessageOppositeParts\"]/button";
+    String clicAñadirVictima = "//body/ek-main[1]/div[2]/div[1]/div[1]/ek-perfil-abogada-analista[1]/main[1]/div[2]/ek-abogada-analista-informacion-basica-del-proceso[1]/section[1]/form[1]/article[4]/form[1]/div[1]/button[1]";
     String usuario = "li[display='dynamic']";
     String actosAdmin = "//*[@id=\"formulario-registro-informacion-basica\"]/article[6]/div[2]/button";
     String listActos = "//select[@formcontrolname='idTpActo']\n";
@@ -219,7 +219,7 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElement(clicEntidad);
     }
     public void clicAdicionarParte() {
-        this.clickElementCss(adicionarParte);
+        this.clickElement(adicionarParte);
     }
     public void clicEntidad2() {
         this.clickElement(clicEntidad2);
@@ -242,8 +242,9 @@ public class CreateConciliacionPage extends BasePage {
     public void clicText() {
         this.clickElementCss(usuario);
     }
-    public void clicActosAdmin() {
+    public void clicActosAdmin() throws InterruptedException {
         this.clickElement(actosAdmin);
+        Thread.sleep(1000);
     }
 
     public void clicListActos() {
@@ -322,8 +323,9 @@ public class CreateConciliacionPage extends BasePage {
     public void añadirCausa() {
         this.clickElement(buttonAñadirCausa);
     }
-    public void nextValorEconomico() {
+    public void nextValorEconomico() throws InterruptedException {
         this.clickElement(next);
+        Thread.sleep(6000);
     }
     public void valorEconomico() {
         this.clickElement(valor);
@@ -361,7 +363,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña4() throws InterruptedException {
         this.clickElement(next4);
-        Thread.sleep(20000);
+        Thread.sleep(40000);
     }
     public void clicDateActuacion() {
         this.clickElement(dateActuacion);
@@ -391,13 +393,6 @@ public class CreateConciliacionPage extends BasePage {
     public void sendObservaciAdmisi() {
         this.writeAndSubmit(observacionesAdmision, "OCURADURIA 1 DELEGADA ANTE EL CONSE");
     }
-    public void clicRadicate2() {
-        this.clickElement(clicRadicate2);
-    }
-    public void sendRadicate2() {
-        this.writeAndSubmit(clicRadicate2, "20198002189312");
-    }
-
     public void clicFinalizar() {
         this.clickElement(finalizar);
     }

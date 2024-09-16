@@ -1,6 +1,6 @@
 Feature: Create Conciliacion
   @Test2
-  Scenario: Radicación rol admin
+  Scenario: Radicación rol abogado
     Given El usuario está en la página de inicio
     When Selecciona tipo documento, ingresa cedula y la contraseña
     And Hace clic en el botón de Entrar y hace clic en Crear registro
