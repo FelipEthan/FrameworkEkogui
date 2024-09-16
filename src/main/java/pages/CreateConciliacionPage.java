@@ -51,8 +51,8 @@ public class CreateConciliacionPage extends BasePage {
     String selecFechPresenActo = "//div[contains(@class, 'today')]";
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
-    String fechaHechos = "//button[@class='btn bg-btn border']";
-    String selecFechaHechos = "//div[@ngbdatepickerdayview and contains(@class, 'btn-light') and text()='9']\n";
+    String fechaHechos = "//input[@id='calendar-fecha-hechos']";
+    String selecFechaHechos = "//div[contains(text(),'16')]";
     String departamento = "#departamento div[class='ng-select-container']";
     String selectDepartamento = "//span[text()='BOGOTA']";
     String municipio = "#municipio";
@@ -77,8 +77,8 @@ public class CreateConciliacionPage extends BasePage {
     String next4 = "//*[@id=\"form\"]/div[2]/button[2]";
     String dateActuacion = "//*[@id=\"performanceDate\"]";
     String selectDateActuacion = "//div[contains(@class, 'today')]";
-    String dateAudiencia = "//input[@placeholder='AAAA-MM-DD']";
-    String selectDateAudiencia = "div[aria-label='lunes, 30 de septiembre de 2024'] div";
+    String dateAudiencia = "//input[@id='calendar-fecha-audiencia-conciliacion']";
+    String selectDateAudiencia = "//div[contains(text(),'16')]";
     String solicitud = "//ng-select[@bindlabel='padoDescripcion']\n";
     String selectSolicitud = "//span[text()='MINISTERIO PUBLICO']\n";
     String docSoportAdmision = "//button[@class='documentos-soporte-btn']\n";
@@ -276,7 +276,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(6000);
+        Thread.sleep(8000);
     }
     public void clicFechaHechos() {
         this.clickElement(fechaHechos);
@@ -375,7 +375,7 @@ public class CreateConciliacionPage extends BasePage {
         this.clickElement(dateAudiencia);
     }
     public void selectDateAudiencia() {
-        this.clickElementCss(selectDateAudiencia);
+        this.clickElement(selectDateAudiencia);
     }
     public void solicitudConciliacion() {
         this.clickElement(solicitud);
@@ -385,7 +385,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void docSoportAdmi() throws InterruptedException {
         this.clickElement(docSoportAdmision);
-        Thread.sleep(4000);
+        Thread.sleep(10000);
     }
     public void clicObservacioAdmisi() {
         this.clickElement(observacionesAdmision);
