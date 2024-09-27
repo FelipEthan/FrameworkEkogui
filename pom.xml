@@ -38,6 +38,11 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <groupId>net.serenity-bdd</groupId>
+                <artifactId>serenity-core</artifactId>
+                <version>3.0.0</version> <!-- Asegúrate de usar la versión correcta -->
+            </dependency>
+            <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-java</artifactId>
                 <version>7.18.0</version>

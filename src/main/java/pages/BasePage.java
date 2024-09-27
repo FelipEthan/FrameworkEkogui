@@ -1,10 +1,7 @@
 package pages;
 // Importaciones necesarias para el funcionamiento de Selenium y la configuración del WebDriver.
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -88,6 +85,10 @@ public class BasePage {
         WebElement element = find(locator);
         element.sendKeys(texto);
         element.sendKeys(Keys.ENTER);
+    }
+    // Método para hacer scroll hasta un elemento
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
 

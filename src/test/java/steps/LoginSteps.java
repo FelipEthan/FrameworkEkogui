@@ -37,6 +37,7 @@ public class LoginSteps {
     @Then("^El usuario debe ser redirigido a Ekogui$")
     public void screenEkogui() {
         this.loginPage.textValidate();
+        this.loginPage.closessBrowser();
     }
 
 

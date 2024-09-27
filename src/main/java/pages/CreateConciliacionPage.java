@@ -1,6 +1,8 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CreateConciliacionPage extends BasePage {
 
@@ -26,7 +28,7 @@ public class CreateConciliacionPage extends BasePage {
     String buttonDocSop = "//button[@class='documentos-soporte-btn border']";
     String clicRadicate = "//body/ngb-modal-window[1]/div[1]/div[1]/ek-modal-soporte[1]/div[1]/div[1]/div[1]/div[2]/div[2]/input[1]";
     String buttonSearch = "//button[contains(text(),'Buscar')]";
-    String buttonClose = "//button[contains(text(),'Cerrar')]";
+    String buttonClose = "/html/body/ngb-modal-window/div/div/ek-modal-soporte/div/div/div/div[9]/button";
     String partes = "#partes_tipo_de_parte div[class='ng-select-container']";
     String entidad = "//span[contains(text(),'ENTIDAD')]\n";
     String tipoCalidad = "#partes_calidad div[class='ng-select-container']";
@@ -41,7 +43,7 @@ public class CreateConciliacionPage extends BasePage {
     String clicIdentificacion = "#victima_identificacion";
     String sendIdentificacion = "//*[@id='victima_identificacion']";
     String clicAñadirVictima = "//body/ek-main[1]/div[2]/div[1]/div[1]/ek-perfil-abogada-analista[1]/main[1]/div[2]/ek-abogada-analista-informacion-basica-del-proceso[1]/section[1]/form[1]/article[4]/form[1]/div[1]/button[1]";
-    String usuario = "li[display='dynamic']";
+    String usuario = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-informacion-basica-del-proceso/section/form/article[4]/form/label[1]/span";
     String actosAdmin = "//*[@id=\"formulario-registro-informacion-basica\"]/article[6]/div[2]/button";
     String listActos = "//select[@formcontrolname='idTpActo']\n";
     String optionActo = "//option[@value='12']\n";
@@ -78,7 +80,7 @@ public class CreateConciliacionPage extends BasePage {
     String dateActuacion = "//*[@id=\"performanceDate\"]";
     String selectDateActuacion = "//div[contains(@class, 'today')]";
     String dateAudiencia = "//input[@id='calendar-fecha-audiencia-conciliacion']";
-    String selectDateAudiencia = "//div[contains(text(),'16')]";
+    String selectDateAudiencia = "//div[contains(text(),'29')]";
     String solicitud = "//ng-select[@bindlabel='padoDescripcion']\n";
     String selectSolicitud = "//span[text()='MINISTERIO PUBLICO']\n";
     String docSoportAdmision = "//button[@class='documentos-soporte-btn']\n";
@@ -189,8 +191,9 @@ public class CreateConciliacionPage extends BasePage {
             this.writeAndSubmit(clicRadicate, "20198002189312");
     }
 
-    public void clicSearch() {
+    public void clicSearch() throws InterruptedException {
         this.clickElement(buttonSearch);
+        Thread.sleep(10000);
     }
 
     public void clicClose() {
@@ -239,8 +242,9 @@ public class CreateConciliacionPage extends BasePage {
     public void clicAñadirVictimas() {
         this.clickElement(clicAñadirVictima);
     }
-    public void clicText() {
-        this.clickElementCss(usuario);
+    public void clicText() throws InterruptedException {
+        this.clickElement(usuario);
+        Thread.sleep(1000);
     }
     public void clicActosAdmin() throws InterruptedException {
         this.clickElement(actosAdmin);
@@ -398,6 +402,12 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void clicFinalizarSi() {
         this.clickElement(buttonSi);
+    }
+    // Método para cerrar el modal de soporte
+    public void closeModalSoporte() {
+        WebElement closeModalButton = driver.findElement(By.xpath(buttonClose));
+        scrollToElement(closeModalButton);  // Usa el método de BasePage para hacer scroll
+        closeModalButton.click();  // Luego haces clic en el botón
     }
 }
 

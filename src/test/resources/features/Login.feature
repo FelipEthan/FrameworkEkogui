@@ -5,11 +5,11 @@ Feature: Login
     When El usuario "<cedula>" y la contraseña "<contraseña>"
     And El usuario hace clic en el botón de Entrar
     Then El usuario debe ser redirigido a Ekogui
-
     Examples:
       | cedula     | contraseña          |
       | 1016079471 | Agentesoporte_16     |
       | 17642332   | Agentesoporte_16     |
+
 
   @Test1
   Scenario: Login exitoso con credenciales válidas rol administrador
