@@ -74,6 +74,9 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicEntidades();
         this.createConciliacion.clicEntidad();
         this.createConciliacion.clicAdicionarParte();
+        this.createConciliacion.clicDocSopor();
+        this.createConciliacion.clicSearch();
+        this.createConciliacion.closeModalSoporte();
         this.createConciliacion.clicParts();
         this.createConciliacion.clicParte();
         this.createConciliacion.clicTipCalidad();
@@ -134,6 +137,8 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicRadicate();
         this.createConciliacion.sendRadicate();
         this.createConciliacion.clicSearch();
+        this.createConciliacion.closeModalSoporte();
+        this.createConciliacion.docSoportAdmi();
         this.createConciliacion.closeModalSoporte();
         this.createConciliacion.solicitudConciliacion();
         this.createConciliacion.selectSolicitudConciliacion();

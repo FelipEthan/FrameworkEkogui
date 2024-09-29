@@ -191,9 +191,8 @@ public class CreateConciliacionPage extends BasePage {
             this.writeAndSubmit(clicRadicate, "20198002189312");
     }
 
-    public void clicSearch() throws InterruptedException {
+    public void clicSearch() {
         this.clickElement(buttonSearch);
-        Thread.sleep(10000);
     }
 
     public void clicClose() {
@@ -280,7 +279,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(8000);
+        Thread.sleep(4000);
     }
     public void clicFechaHechos() {
         this.clickElement(fechaHechos);
@@ -329,13 +328,13 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextValorEconomico() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(6000);
+        Thread.sleep(4000);
     }
     public void valorEconomico() {
         this.clickElement(valor);
     }
     public void selectValorEconomico() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         this.clickElement(selectValor);
     }
     public void erogacion() {
@@ -367,7 +366,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña4() throws InterruptedException {
         this.clickElement(next4);
-        Thread.sleep(40000);
+        Thread.sleep(2000);
     }
     public void clicDateActuacion() {
         this.clickElement(dateActuacion);
@@ -389,7 +388,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void docSoportAdmi() throws InterruptedException {
         this.clickElement(docSoportAdmision);
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
     public void clicObservacioAdmisi() {
         this.clickElement(observacionesAdmision);
