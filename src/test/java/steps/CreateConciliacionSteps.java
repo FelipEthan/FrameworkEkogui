@@ -58,10 +58,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendAutoridad();
         this.createConciliacion.clicJurisdiccion();
         this.createConciliacion.sendJurisdiccion();
-        this.createConciliacion.clicFormPresent();
-        this.createConciliacion.clicOptionFormPresent();
         this.createConciliacion.clicAccionControl();
         this.createConciliacion.clicOptionAccionControl();
+        this.createConciliacion.clicFormPresent();
+        this.createConciliacion.clicOptionFormPresent();
         this.createConciliacion.clicDocSopor();
         this.createConciliacion.clicRadicate();
         this.createConciliacion.sendRadicate();
@@ -91,12 +91,13 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clicText();
         this.createConciliacion.clicAñadirVictimas();
         this.createConciliacion.clicActosAdmin();
-        this.createConciliacion.clicListActos();
-        this.createConciliacion.clicActo();
+        this.createConciliacion.clicDivActos();
+        this.createConciliacion.esperaAndClic();
         this.createConciliacion.clicObservaciones();
+        this.createConciliacion.sendObservaciones("PRUEBAS");
         this.createConciliacion.clicNumActo();
         this.createConciliacion.sendNumActo("21302124");
-        this.createConciliacion.sendObservaciones("PRUEBAS");
+        this.createConciliacion.clicActo();
         this.createConciliacion.clicFechPresentActo();
         this.createConciliacion.selectFechPresenActo();
         this.createConciliacion.saveActo();
@@ -126,7 +127,7 @@ public class CreateConciliacionSteps {
         this.createConciliacion.unidad();
         this.createConciliacion.selectUnidad();
         this.createConciliacion.selectValorPretension();
-        this.createConciliacion.sendValorPretension("20000000");
+        this.createConciliacion.sendValorPretension("100000000");
         this.createConciliacion.adicionarPretension();
         this.createConciliacion.nextPestaña4();
         this.createConciliacion.clicDateActuacion();

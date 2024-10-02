@@ -24,7 +24,7 @@ public class BasePage {
         // Asigna el WebDriver recibido al campo 'driver' de la clase
         this.driver = driver;
         // Inicializa WebDriverWait con un tiempo de espera de 30 segundos
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         // Inicializa Actions para realizar acciones avanzadas del usuario
         this.actions = new Actions(driver);
         // Inicializa los elementos de la página usando PageFactory
@@ -58,8 +58,22 @@ public class BasePage {
     private WebElement find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
+    private WebElement findClic(String locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+    }
+    private void waitForSpinnerToDisappear(String locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));  // Ajustar el tiempo de espera
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.tagName(locator)));  // Usar el locator
+    }
+
     private WebElement findCss(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
+    }
+    public void esperaExplicita(String locator) {
+        waitForSpinnerToDisappear(locator);
+    }
+    public void clickElementClic(String locator) {
+        findClic(locator).click();
     }
 
     public void clickElement(String locator) {

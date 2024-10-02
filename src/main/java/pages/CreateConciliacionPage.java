@@ -23,7 +23,7 @@ public class CreateConciliacionPage extends BasePage {
     String optionPresent = "//span[text()='INDIVIDUAL']";
     String datePresent = "//*[@id=\"undefined\"]";
     String clicDay = "//div[contains(@class, 'today')]";
-    String accionControl = "#accion_de_medios_de_control div[class='ng-select-container']";
+    String accionControl = "//*[@id=\"accion_de_medios_de_control\"]/div";
     String optionAccionControl = "//span[text()='EJECUTIVO']";
     String buttonDocSop = "//button[@class='documentos-soporte-btn border']";
     String clicRadicate = "//body/ngb-modal-window[1]/div[1]/div[1]/ek-modal-soporte[1]/div[1]/div[1]/div[1]/div[2]/div[2]/input[1]";
@@ -53,8 +53,8 @@ public class CreateConciliacionPage extends BasePage {
     String selecFechPresenActo = "//div[contains(@class, 'today')]";
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
-    String fechaHechos = "//input[@id='calendar-fecha-hechos']";
-    String selecFechaHechos = "//div[contains(text(),'16')]";
+    String fechaHechos = "//*[@id=\"calendar-fecha-hechos\"]";
+    String selecFechaHechos = "//*[@id=\"calendar-fecha-hechos\"]/div/div/div[2]/div[2]/div[3]";
     String departamento = "#departamento div[class='ng-select-container']";
     String selectDepartamento = "//span[text()='BOGOTA']";
     String municipio = "#municipio";
@@ -80,7 +80,7 @@ public class CreateConciliacionPage extends BasePage {
     String dateActuacion = "//*[@id=\"performanceDate\"]";
     String selectDateActuacion = "//div[contains(@class, 'today')]";
     String dateAudiencia = "//input[@id='calendar-fecha-audiencia-conciliacion']";
-    String selectDateAudiencia = "//div[contains(text(),'29')]";
+    String selectDateAudiencia = "//*[@id=\"calendar-fecha-audiencia-conciliacion\"]/div/div/div[2]/div[2]/div[31]";
     String solicitud = "//ng-select[@bindlabel='padoDescripcion']\n";
     String selectSolicitud = "//span[text()='MINISTERIO PUBLICO']\n";
     String docSoportAdmision = "//button[@class='documentos-soporte-btn']\n";
@@ -88,6 +88,8 @@ public class CreateConciliacionPage extends BasePage {
     String observacionesAdmision = "//*[@id=\"story\"]";
     String finalizar = "//button[@type='submit']\n";
     String buttonSi = "//button[@class='button-save']";
+    String spinner = "ngx-spinner";
+    String divActos = "/html/body/ngb-modal-window/div/div/ek-modal-registro-de-actos-administrativos";
 
 
     public void navegarEkogui() {
@@ -163,6 +165,7 @@ public class CreateConciliacionPage extends BasePage {
     }
 
     public void clicFormPresent() {
+        this.esperaExplicita(spinner);
         this.clickElement(formaPresent);
     }
 
@@ -171,7 +174,8 @@ public class CreateConciliacionPage extends BasePage {
     }
 
     public void clicAccionControl() {
-        this.clickElementCss(accionControl);
+        this.esperaExplicita(spinner);
+        this.clickElement(accionControl);
     }
 
 
@@ -239,20 +243,24 @@ public class CreateConciliacionPage extends BasePage {
         this.write(sendIdentificacion, value);
     }
     public void clicAñadirVictimas() {
+        this.esperaExplicita(spinner);
         this.clickElement(clicAñadirVictima);
     }
-    public void clicText() throws InterruptedException {
-        this.clickElement(usuario);
-        Thread.sleep(1000);
+    public void clicText() {
+        this.clickElementClic(usuario);
     }
-    public void clicActosAdmin() throws InterruptedException {
-        this.clickElement(actosAdmin);
-        Thread.sleep(1000);
+    public void clicDivActos()  {
+        this.clickElement(divActos);
+    }
+    public void clicActosAdmin()  {
+        this.clickElementClic(actosAdmin);
+        this.esperaExplicita(spinner);
+    }
+    public void esperaAndClic()  {
+        this.esperaExplicita(spinner);
+        this.clickElementClic(listActos);
     }
 
-    public void clicListActos() {
-        this.clickElement(listActos);
-    }
     public void clicActo() {
         this.clickElement(optionActo);
     }
@@ -279,9 +287,9 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(4000);
     }
     public void clicFechaHechos() {
+        this.esperaExplicita(spinner);
         this.clickElement(fechaHechos);
     }
     public void clicSelectFechaHechos() {
@@ -328,13 +336,12 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextValorEconomico() throws InterruptedException {
         this.clickElement(next);
-        Thread.sleep(4000);
+        this.esperaExplicita(spinner);
     }
     public void valorEconomico() {
         this.clickElement(valor);
     }
     public void selectValorEconomico() throws InterruptedException {
-        Thread.sleep(2000);
         this.clickElement(selectValor);
     }
     public void erogacion() {
@@ -366,9 +373,9 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void nextPestaña4() throws InterruptedException {
         this.clickElement(next4);
-        Thread.sleep(2000);
     }
     public void clicDateActuacion() {
+        this.esperaExplicita(spinner);
         this.clickElement(dateActuacion);
     }
     public void selectDateActuacion() {
@@ -388,7 +395,7 @@ public class CreateConciliacionPage extends BasePage {
     }
     public void docSoportAdmi() throws InterruptedException {
         this.clickElement(docSoportAdmision);
-        Thread.sleep(1000);
+        this.esperaExplicita(spinner);
     }
     public void clicObservacioAdmisi() {
         this.clickElement(observacionesAdmision);
