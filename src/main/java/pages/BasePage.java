@@ -114,7 +114,7 @@ public class BasePage {
         String texto = inputElement.getAttribute("value");
         System.out.println("Numero de Ekogui es: " + texto);
         String textoUrl = driver.getCurrentUrl();
-        System.out.println("Para consultar la consulta: " + textoUrl);
+        System.out.println("Para consultar la conciliación ingresa a : " + textoUrl);
     }
 
 }
