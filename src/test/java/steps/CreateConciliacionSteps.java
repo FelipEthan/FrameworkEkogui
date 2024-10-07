@@ -17,22 +17,26 @@ public class CreateConciliacionSteps {
         this.driver = BasePage.initializeDriver();
         this.createConciliacion = new CreateConciliacionPage(this.driver);
     }
+
     @Given("^El usuario está en la página de inicio$")
     public void toEkogui() {
         this.createConciliacion.navegarEkogui();
     }
+
     @When("^Selecciona tipo documento, ingresa cedula y la contraseña$")
     public void enterDataAdmin() {
         this.createConciliacion.selectTipoDocumento("CC");
         this.createConciliacion.sendUser("79150488");
         this.createConciliacion.sendPass("Agentesoporte_16");
     }
+
     @And("^Hace clic en el botón de Entrar y hace clic en Crear registro$")
     public void clickEntrarAdmin() {
         this.createConciliacion.clickSubmit();
         this.createConciliacion.clicCreateRecord();
 
     }
+
     @Then("^El sistema solicita el numero identificador unico del caso$")
     public void screenIdentificador() {
         this.createConciliacion.textValidatePGN();
@@ -46,12 +50,14 @@ public class CreateConciliacionSteps {
         this.createConciliacion.clickConsult();
 
     }
+
     @Then("^El sistema muestra la pestaña Información Básica$")
     public void screenPesta1() {
         this.createConciliacion.textValidatePesta1();
     }
-    @When("^Se diligencia la información y hace clic en Continuar$")
-    public void enterDataPesta1() throws InterruptedException {
+
+    @And("^Se diligencia la información básica y se hace clic en Continuar$")
+    public void enterDataPestaña1() throws InterruptedException {
         this.createConciliacion.datePresent();
         this.createConciliacion.sendDate();
         this.createConciliacion.clicAutoridad();
@@ -102,6 +108,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.selectFechPresenActo();
         this.createConciliacion.saveActo();
         this.createConciliacion.nextPestaña();
+    }
+
+    @And("^Se diligencia Hechos y causas de la solicitud y se hace clic en Continuar$")
+    public void enterDataPestaña2() {
         this.createConciliacion.clicFechaHechos();
         this.createConciliacion.clicSelectFechaHechos();
         this.createConciliacion.clicDepartamentos();
@@ -118,6 +128,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendSubCausa();
         this.createConciliacion.añadirCausa();
         this.createConciliacion.nextValorEconomico();
+    }
+
+    @And("^Se diligencia Valor económico de la solicitud y se hace clic en Continuar$")
+    public void enterDataPestaña3() {
         this.createConciliacion.valorEconomico();
         this.createConciliacion.selectValorEconomico();
         this.createConciliacion.erogacion();
@@ -130,6 +144,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendValorPretension("100000000");
         this.createConciliacion.adicionarPretension();
         this.createConciliacion.nextPestaña4();
+    }
+
+    @And("^Se diligencia Admisión de la solicitud y se hace clic en Continuar$")
+    public void enterDataPestaña4() {
         this.createConciliacion.clicDateActuacion();
         this.createConciliacion.selectDateActuacion();
         this.createConciliacion.clicDateAudiencia();
@@ -147,5 +165,10 @@ public class CreateConciliacionSteps {
         this.createConciliacion.sendObservaciAdmisi();
         this.createConciliacion.clicFinalizar();
         this.createConciliacion.clicFinalizarSi();
+        this.createConciliacion.textValidateConciliaciónCreada();
+    }
+    @Then("^El sistema radica la conciliación extrajudicial$")
+    public void radicacionExitosa(){
+        this.createConciliacion.textoEscritura();
     }
 }

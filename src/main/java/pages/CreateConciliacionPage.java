@@ -54,7 +54,7 @@ public class CreateConciliacionPage extends BasePage {
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
     String fechaHechos = "//*[@id=\"calendar-fecha-hechos\"]";
-    String selecFechaHechos = "//*[@id=\"calendar-fecha-hechos\"]/div/div/div[2]/div[2]/div[3]";
+    String selecFechaHechos = "//*[@id=\"calendar-fecha-hechos\"]/div/div/div[2]/div[2]/div[9]";
     String departamento = "#departamento div[class='ng-select-container']";
     String selectDepartamento = "//span[text()='BOGOTA']";
     String municipio = "#municipio";
@@ -90,7 +90,8 @@ public class CreateConciliacionPage extends BasePage {
     String buttonSi = "//button[@class='button-save']";
     String spinner = "ngx-spinner";
     String divActos = "/html/body/ngb-modal-window/div/div/ek-modal-registro-de-actos-administrativos";
-
+    String activo = "/html/body/ek-main/div[2]/div/div/ek-home/ek-informacion-proceso/section/div[1]/div/div[1]/div[2]/p";
+    String numEkogui = "//*[@id=\"idEkogui\"]";
 
     public void navegarEkogui() {
         navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
@@ -149,6 +150,7 @@ public class CreateConciliacionPage extends BasePage {
     }
 
     public void datePresent() {
+        this.esperaExplicita(spinner);
         this.clickElement(datePresent);
     }
 
@@ -334,14 +336,14 @@ public class CreateConciliacionPage extends BasePage {
     public void añadirCausa() {
         this.clickElement(buttonAñadirCausa);
     }
-    public void nextValorEconomico() throws InterruptedException {
+    public void nextValorEconomico(){
         this.clickElement(next);
         this.esperaExplicita(spinner);
     }
     public void valorEconomico() {
         this.clickElement(valor);
     }
-    public void selectValorEconomico() throws InterruptedException {
+    public void selectValorEconomico() {
         this.clickElement(selectValor);
     }
     public void erogacion() {
@@ -371,7 +373,7 @@ public class CreateConciliacionPage extends BasePage {
     public void adicionarPretension() {
         this.clickElement(adicionarPretension);
     }
-    public void nextPestaña4() throws InterruptedException {
+    public void nextPestaña4() {
         this.clickElement(next4);
     }
     public void clicDateActuacion() {
@@ -393,7 +395,7 @@ public class CreateConciliacionPage extends BasePage {
     public void selectSolicitudConciliacion() {
         this.clickElement(selectSolicitud);
     }
-    public void docSoportAdmi() throws InterruptedException {
+    public void docSoportAdmi() {
         this.clickElement(docSoportAdmision);
         this.esperaExplicita(spinner);
     }
@@ -414,6 +416,15 @@ public class CreateConciliacionPage extends BasePage {
         WebElement closeModalButton = driver.findElement(By.xpath(buttonClose));
         scrollToElement(closeModalButton);  // Usa el método de BasePage para hacer scroll
         closeModalButton.click();  // Luego haces clic en el botón
+    }
+    public void textValidateConciliaciónCreada() {
+        this.textValidate(activo);
+    }
+    public void textoEscritura(){
+        this.esperaExplicita(spinner);
+        this.valorTextoCaso();
+        this.valorTextoEkogui();
+
     }
 }
 

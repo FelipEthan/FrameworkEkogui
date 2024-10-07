@@ -24,7 +24,7 @@ public class BasePage {
         // Asigna el WebDriver recibido al campo 'driver' de la clase
         this.driver = driver;
         // Inicializa WebDriverWait con un tiempo de espera de 30 segundos
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         // Inicializa Actions para realizar acciones avanzadas del usuario
         this.actions = new Actions(driver);
         // Inicializa los elementos de la página usando PageFactory
@@ -104,5 +104,18 @@ public class BasePage {
     public void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+    public void valorTextoCaso() {
+        WebElement inputElement = driver.findElement(By.id("numeroCaso"));
+        String texto = inputElement.getAttribute("value");
+        System.out.println("Numero del caso es: " + texto);
+    }
+    public void valorTextoEkogui() {
+        WebElement inputElement = driver.findElement(By.id("idEkogui"));
+        String texto = inputElement.getAttribute("value");
+        System.out.println("Numero de Ekogui es: " + texto);
+        String textoUrl = driver.getCurrentUrl();
+        System.out.println("Para consultar la consulta: " + textoUrl);
+    }
+
 }
 
