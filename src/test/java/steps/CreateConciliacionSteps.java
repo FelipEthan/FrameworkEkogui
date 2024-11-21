@@ -26,13 +26,15 @@ public class CreateConciliacionSteps {
     @When("^Selecciona tipo documento, ingresa cedula y la contraseña$")
     public void enterDataAdmin() {
         this.createConciliacion.selectTipoDocumento("CC");
-        this.createConciliacion.sendUser("79150488");
-        this.createConciliacion.sendPass("Agentesoporte_16");
+        this.createConciliacion.sendUser("79799824");//79150488
+        this.createConciliacion.sendPass("Agentesoporte_16");//Cap_Linktic2024
     }
 
     @And("^Hace clic en el botón de Entrar y hace clic en Crear registro$")
     public void clickEntrarAdmin() {
         this.createConciliacion.clickSubmit();
+        this.createConciliacion.clickConciliacionExtrajudicial();
+        this.createConciliacion.clickConciliacionExtrajudicialHome();
         this.createConciliacion.clicCreateRecord();
 
     }
