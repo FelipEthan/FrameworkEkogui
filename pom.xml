@@ -11,8 +11,8 @@
             <maven.surefire.plugin.version>3.2.3</maven.surefire.plugin.version>
             <maven.compiler.source.version>17</maven.compiler.source.version>
             <maven.compiler.target.version>17</maven.compiler.target.version>
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
+            <maven.compiler.source>17</maven.compiler.source>
+            <maven.compiler.target>17</maven.compiler.target>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         </properties>
         <dependencies>

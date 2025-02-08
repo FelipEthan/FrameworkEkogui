@@ -13,19 +13,6 @@ Feature: Create Conciliacion
     And Se diligencia Admisión de la solicitud y se hace clic en Continuar
     Then El sistema radica la conciliación extrajudicial
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   @Test3
   Scenario: Radicación rol admin en registro
     Given El usuario está en la página de inicio

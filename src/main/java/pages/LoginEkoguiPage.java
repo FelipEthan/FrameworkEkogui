@@ -14,7 +14,7 @@ public class LoginEkoguiPage extends BasePage {
         super(driver);
     }
     public void navigateToEkogui() {
-        navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
+        navigateTo("https://cap.defensajuridica.gov.co/ekogui-gateway");
     }
     public void selectTipoDocumento(String value) {
         selectDropdownOption(selectTipoDoc, value);

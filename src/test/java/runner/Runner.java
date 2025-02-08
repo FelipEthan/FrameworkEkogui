@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "summary",
-                "html:target/.html",
-                "json:target/.json",
+                "html:target/report.html",
+                "json:target/report.json",
                 "junit:target/.xml",
                "timeline:target/cucumber-timeline",
         },
@@ -20,4 +20,3 @@ public class Runner {
     }
 
 }
-

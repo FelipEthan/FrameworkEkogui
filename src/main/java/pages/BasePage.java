@@ -31,12 +31,14 @@ public class BasePage {
         PageFactory.initElements(driver, this);
         // Maximiza la ventana del navegador
         driver.manage().window().maximize();
+        ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     }
     // Método estático que inicializa y configura el WebDriver
     public static WebDriver initializeDriver() {
         // Configura las opciones para el navegador Chrome
         ChromeOptions chromeOptions = new ChromeOptions();
-        // Utiliza WebDriverManager para configurar el controlador de Chrome automáticamente
+        //chromeOptions.addArguments("--headless");  // Para ejecutar sin interfaz gráfica (opcional)
+        //chromeOptions.addArguments("--remote-debugging-port=9222");
         WebDriverManager.chromedriver().setup();
         // Retorna una nueva instancia de ChromeDriver con las opciones configuradas
         return new ChromeDriver(chromeOptions);

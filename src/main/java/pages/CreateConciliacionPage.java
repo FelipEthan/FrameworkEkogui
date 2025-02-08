@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CreateConciliacionPage extends BasePage {
+public class CreateConciliacionPage extends BasePage{
 
     String selectTipoDoc = "//select[@id='tipoDoc']";
     String element1 = "//input[@id='document-number']";
@@ -22,7 +22,7 @@ public class CreateConciliacionPage extends BasePage {
     String sendAutoridad = "//*[@id=\"autoridad_que_conoce\"]/div/div/div[2]/input";
     String sendJurisdiccion = "//*[@id=\"jurisdiccion\"]/div/div/div[2]/input";
     String formaPresent = "//*[@id=\"forma_de_presentacion\"]/div";
-    String optionPresent = "//span[text()='INDIVIDUAL']";
+    String optionPresent = "//span[text()='CONJUNTA']";
     String datePresent = "//*[@id=\"undefined\"]";
     String clicDay = "//div[contains(@class, 'today')]";
     String accionControl = "//*[@id=\"accion_de_medios_de_control\"]/div";
@@ -56,7 +56,7 @@ public class CreateConciliacionPage extends BasePage {
     String saveActos = "//button[@type='submit' and text()='Guardar']\n";
     String next = "//button[@type='submit' and text()='Continuar']\n";
     String fechaHechos = "//*[@id=\"calendar-fecha-hechos\"]";
-    String selecFechaHechos = "//*[@id=\"calendar-fecha-hechos\"]/div/div/div[2]/div[2]/div[10]";
+    String selecFechaHechos = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-hechos-y-causas/section/form/article[1]/label[1]/ek-app-calendar/article/div/div/div[2]/div[2]/div[4]";
     String departamento = "#departamento div[class='ng-select-container']";
     String selectDepartamento = "//span[text()='BOGOTA']";
     String municipio = "#municipio";
@@ -65,7 +65,7 @@ public class CreateConciliacionPage extends BasePage {
     String descripHechos = "//*[@id=\"descripcion_de_los_echos\"]";
     String pretensionDeclara = "//*[@id='presentasiones_declarativas']";
     String causa = "//*[@id=\"causa\"]/div";
-    String selectCausa = "//span[contains(.,'ACCESO CARNAL O ACTO SEXUAL VIOLENTO')]";
+    String selectCausa = "//span[contains(.,'ACOSO LABORAL')]";
     String subCausa = "//input[@id='subcausa']";
     String buttonAñadirCausa = "//*[@id=\"form\"]/article[3]/div[1]/button";
     String valor = "//*[@id=\"valor_economico\"]/div";
@@ -82,7 +82,7 @@ public class CreateConciliacionPage extends BasePage {
     String dateActuacion = "//*[@id=\"performanceDate\"]";
     String selectDateActuacion = "//div[contains(@class, 'today')]";
     String dateAudiencia = "//input[@id='calendar-fecha-audiencia-conciliacion']";
-    String selectDateAudiencia = "//*[@id=\"calendar-fecha-audiencia-conciliacion\"]/div/div/div[2]/div[2]/div[33]";
+    String selectDateAudiencia = "/html/body/ek-main/div[2]/div/div/ek-perfil-abogada-analista/main/div[2]/ek-abogada-analista-admision-request/section/form/article[2]/label[4]/ek-app-calendar/article/div/div/div[2]/div[2]/div[31]";
     String solicitud = "//ng-select[@bindlabel='padoDescripcion']\n";
     String selectSolicitud = "//span[text()='MINISTERIO PUBLICO']\n";
     String docSoportAdmision = "//button[@class='documentos-soporte-btn']\n";
@@ -96,7 +96,7 @@ public class CreateConciliacionPage extends BasePage {
     String numEkogui = "//*[@id=\"idEkogui\"]";
 
     public void navegarEkogui() {
-        navigateTo("http://3.223.39.119:8081/ekogui-gateway/inicio");
+        navigateTo("http://3.223.39.119:8081/ekogui-gateway/");
     }
 
     public void selectTipoDocumento(String value) {
@@ -171,7 +171,7 @@ public class CreateConciliacionPage extends BasePage {
     }
 
     public void sendJurisdiccion() {
-        this.writeAndSubmit(sendJurisdiccion, "ORDINARIO CIVIL");
+        this.writeAndSubmit(sendJurisdiccion, "CONTENCIOSO ADMINISTRATIVA");
     }
 
     public void clicFormPresent() {
